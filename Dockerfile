@@ -1,4 +1,4 @@
-FROM python:3.10  # Specify a stable version
+FROM python:3.10 
 
 # Install required packages
 RUN apt-get update && apt-get install -y python3-distutils
@@ -13,7 +13,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run migrations
-RUN python manage.py migrate  # Ensure Django is installed
+RUN python manage.py migrate  
 
 # Expose the application port
 EXPOSE 8000
